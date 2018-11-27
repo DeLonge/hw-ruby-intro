@@ -5,27 +5,27 @@
 def sum arr
   total = 0
   arr.each do |x|
-    total +=x
+    total += x
   end
   total
 end
 
 def max_2_sum arr
-  sorted_arr = arr.sort{|x,y| y <=> x}
+  sorted_arr = arr.sort {|x, y| y <=> x}
 
   if sorted_arr.length == 0
-     0
+    0
   elsif sorted_arr.length == 1
-     sorted_arr[0]
+    sorted_arr[0]
   elsif sorted_arr.length > 1
-     sorted_arr[0] + sorted_arr[1]
+    sorted_arr[0] + sorted_arr[1]
   end
 end
 
 def sum_to_n? arr, n
   combine = arr.combination(2).to_a
 
-  combine.any? do |x,y|
+  combine.any? do |x, y|
     x + y == n
   end
 end
