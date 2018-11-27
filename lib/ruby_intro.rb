@@ -3,29 +3,46 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  total = 0
+  arr.each do |x|
+    total +=x
+  end
+  total
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  sorted_arr = arr.sort{|x,y| y <=> x}
+
+  if sorted_arr.length == 0
+     0
+  elsif sorted_arr.length == 1
+     sorted_arr[0]
+  elsif sorted_arr.length > 1
+     sorted_arr[0] + sorted_arr[1]
+  end
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  combine = arr.combination(2).to_a
+
+  combine.any? do |x,y|
+    x + y == n
+  end
 end
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  (/\A+[^aiueo\W]/i).match(s) != nil
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  return true if s == "0"
+  (/^[10]*00$/).match(s) != nil
 end
 
 # Part 3
